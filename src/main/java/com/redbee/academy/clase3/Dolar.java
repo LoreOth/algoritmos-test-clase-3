@@ -1,5 +1,6 @@
 package com.redbee.academy.clase3;
 
+import java.text.DecimalFormat;
 import java.util.List;
 
 public class Dolar {
@@ -7,11 +8,11 @@ public class Dolar {
     /**
      * Un analista financiero lleva un registro del precio del dólar día a día,
      * y desea saber cuál fue la mayor de las alzas en el precio diario a lo largo de ese período.
-     *
+     * <p>
      * Escriba un programa que analice el histórico del dólar recibido en una lista.
-     *
+     * <p>
      * El programa debe entregar como salida cuál fue la mayor de las alzas de un día para el otro.
-     *
+     * <p>
      * Si en ningún día el precio subió, la salida debe ser: 0.
      * Dia 1: 496.96
      * Dia 2: 499.03
@@ -29,7 +30,14 @@ public class Dolar {
      * @return
      */
     public static Float resolver(List<Float> historicoDolar) {
-        //TODO: implementar
-        return null;
+        float max = 0;
+        float result;
+        for (int i = 0; i < historicoDolar.size() - 1; i++) {
+            if (-(historicoDolar.get(i) - historicoDolar.get(i + 1)) > max) {
+                max = -(historicoDolar.get(i) - historicoDolar.get(i + 1));
+            }
+        }
+        result = (float) Math.round(max * 100) / 100;
+        return result;
     }
 }
