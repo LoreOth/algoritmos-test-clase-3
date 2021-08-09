@@ -4,7 +4,7 @@ public class CombinacionDados {
 
     /**
      * INCOMPLETO
-     *
+     * <p>
      * Cuando tiramos 2 dados y sumamos los valores es posible generar un resultado comprendido entre 2 al 12.
      * <p>
      * Generar un algoritmo que diga con cuantas combinaciones posibles se puede generar un valor dado.
@@ -35,33 +35,35 @@ public class CombinacionDados {
      * 3 por 17
      * 1 por 18
      * <p>
-     *
      */
 
 
     public static Integer resolverCombinacionesPosiblesCon2Dados(Integer valor) {
-        return null;
-
-    }
-
-    /**
-     * Lo mismo pero con 3 dados
-     *
-     * @param valor
-     * @return
-     */
-    public static Integer resolverCombinacionesPosiblesCon3Dados(Integer valor) {
-
-        return
-    }
-
-
-    public static Integer calculoFactorial(Integer valor) {
-        Integer factorial = 1;
-        while (valor != 0) {
-            factorial = factorial * valor;
-            valor--;
+        if (valor >= 2 && valor <= 7) {
+            return (valor - 1);
+        } else {
+            return 13 - valor;
         }
-        return factorial;
     }
+
+    public static Integer resolverCombinacionesPosiblesCon3Dados(Integer valor) {
+        int i = valor - 3;
+        int j = 18 - valor;
+        if (valor >= 3 && valor <= 5) {
+            return (int) Math.round(Math.pow(2, i) + i);
+        } else if (valor == 6 || valor == 15) {
+            return 10;
+        } else if (valor == 8 || valor == 13) {
+            return 21;
+        } else if (valor == 9 || valor == 12) {
+            return 25;
+        } else if (valor == 10 || valor == 11) {
+            return 27;
+        } else if (valor == 18 || valor == 17 || valor == 16) {
+            return (int) Math.round(Math.pow(2, j) + j);
+        }
+
+        return null;
+    }
+
 }

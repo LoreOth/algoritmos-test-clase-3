@@ -12,7 +12,7 @@ public class CombinacionDadosTests {
 
     @Test
     void test2dados2() {
-        Assertions.assertEquals(3, CombinacionDados.resolverCombinacionesPosiblesCon2Dados(4));
+        Assertions.assertEquals(6, CombinacionDados.resolverCombinacionesPosiblesCon2Dados(7));
     }
 
     @Test
@@ -22,6 +22,6 @@ public class CombinacionDadosTests {
 
     @Test
     void test3dados2() {
-        Assertions.assertEquals(3, CombinacionDados.resolverCombinacionesPosiblesCon3Dados(4));
+        Assertions.assertEquals(6, CombinacionDados.resolverCombinacionesPosiblesCon3Dados(16));
     }
 }

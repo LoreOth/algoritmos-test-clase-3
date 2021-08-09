@@ -12,15 +12,16 @@ public class Palindromo {
      * @return
      */
     public static Boolean esPalindromo(String palabra) {
-        Integer tamaño = palabra.length();
-        Integer i = 1;
-        boolean ok = false;
-        while ((i <= tamaño / 2) && (!ok)) {
-            if (palabra.charAt(i) != palabra.charAt(palabra.length() - i)) {
-                ok = true;
+        String cadenaModificada = palabra.replaceAll("\\s+","");
+        Integer tamaño = cadenaModificada .length();
+        Integer i = 0;
+        boolean ok = true;
+        while ((i <= tamaño / 2) && (ok)) {
+            if (cadenaModificada.toLowerCase().charAt(i) != cadenaModificada.toLowerCase().charAt(cadenaModificada .length() - (i+1))) {
+                ok = false;
             }
+            i++;
         }
-
         return ok;
     }
 }

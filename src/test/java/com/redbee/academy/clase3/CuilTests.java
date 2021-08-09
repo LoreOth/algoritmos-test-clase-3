@@ -9,4 +9,5 @@ public class CuilTests {
     void testCuil() {
         Assertions.assertEquals(6, Cuil.calcular(20, 12345678));
     }
+
 }
